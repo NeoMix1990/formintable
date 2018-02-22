@@ -23,7 +23,7 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.users = this.userService.getUsers();
-    this.subject = this.userService.getUser().subscribe((subject) => ({ subject : console.log(subject)}));
+    this.user = this.userService.getUser().subscribe((user) => ({ user : this.users.push(user)}));
   }
 
   ngOnDestroy(){
