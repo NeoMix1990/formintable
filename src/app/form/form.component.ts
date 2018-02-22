@@ -13,7 +13,7 @@ export class FormComponent implements OnInit {
 
   constructor(private userService: UserService) {  }
   sendUser(formData:NgForm){
-    console.log(formData.value);
+    this.userService.sendUser(formData.value);
   }
 
   ngOnInit() {

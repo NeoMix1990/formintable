@@ -7,18 +7,18 @@ import { User } from './inform/user';
 @Injectable()
 export class UserService {
   users: User[] = users;
-  private subject = new Subject<any>();
+  private user = new Subject<any>();
   constructor() { }
 
 
   sendUser(user) {
-    this.subject.next(user);
+    this.user.next(user);
   }
   getUser(): Observable<any> {
-    return this.subject.asObservable();
+    return this.user.asObservable();
   }
   getUsers(): User[] {
-    console.log(users);
+    // console.log(users);
     return this.users;
   }
 }
