@@ -17,7 +17,6 @@ export class TableComponent implements OnInit {
   subscription: Subscription;
 
   constructor(private userService: UserService){
-    // this.subscription = this.userService.getUser().subscribe(user => { this.user = user; });
     this.users = [];
   }
 
