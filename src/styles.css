@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+.myform, .mytable {
+    text-align: center;
+}
+
+.myform {
+    margin: 30px 0;
+}
+
+.winner {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 20px;
+}
