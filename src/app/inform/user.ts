@@ -1,4 +1,4 @@
 export class User{
   winner: boolean;
-    constructor(firstName: string, lastName: string, email: string,  phone: string,  date: string){}
+    constructor(public firstName: string, public lastName: string, public email: string, public phone: string, public date: string){}
 }
