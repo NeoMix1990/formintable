@@ -1,7 +1,4 @@
-<button class="btn btn-success">Победитель</button>
-<!-- <div *ngIf="user" class="alert alert-success">{{user.text}}</div> -->
-
-<div class="winner"></div>
+<button class="btn btn-success" (click)="winner()">Победитель</button>
 
 
 <table class="table table-bordered">
@@ -17,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users; let i = index">
+    <tr *ngFor="let user of users; let i = index" ngClass="'active': user.winner">
       <th scope="row">{{i+1}}</th>
       <td>{{user.firstName}}</td>
       <td>{{user.lastName}}</td>
