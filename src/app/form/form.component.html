@@ -2,27 +2,59 @@
 
 <hr/>
 
-<form [formGroup]="formData" (ngSubmit)="sendUser(formData)">
+<form class="mytable" [formGroup]="formData" (ngSubmit)="sendUser(formData); formData.reset()">
   <div class="form-group">
     <label for="name">Имя:</label>
-    <input type="text" class="form-control" placeholder="Введите имя" formControlName = "firstName" required>
-    <div class="valid-feedback"></div>
+    <input type="text" class="form-control" placeholder="Введите имя" formControlName="firstName" required>
+    <div *ngIf="formData.controls['firstName'].touched && !formData.controls['firstName'].valid">
+      <span *ngIf="formData.controls['firstName'].hasError('required') ">
+        First name is required
+      </span>
+      <span *ngIf="formData.controls['firstName'].hasError('minlength') ">
+        Min length is 5
+      </span>
+      <span *ngIf="formData.controls['firstName'].hasError('maxlength') ">
+        max length is 20
+      </span>
+    </div>
   </div>
   <div class="form-group">
-    <label for="Surname">Фамилия:</label>
-    <input type="text" class="form-control" placeholder="Введите фамилию" formControlName = "lastName" required>
+    <label for="lastName">Фамилия:</label>
+    <input type="text" class="form-control" placeholder="Введите фамилию" formControlName="lastName" required>
+    <div *ngIf="formData.controls['lastName'].touched && !formData.controls['lastName'].valid">
+      <span *ngIf="formData.controls['lastName'].hasError('required') ">
+        First name is required
+      </span>
+      <span *ngIf="formData.controls['lastName'].hasError('minlength') ">
+        Min length is 5
+      </span>
+      <span *ngIf="formData.controls['lastName'].hasError('maxlength') ">
+        max length is 20
+      </span>
+    </div>
   </div>
   <div class="form-group">
     <label for="email">Email:</label>
-    <input type="email" class="form-control" placeholder="Введите email" formControlName = "email" required>
+    <input type="email" class="form-control" placeholder="Введите email" formControlName="email" required>
+    <div *ngIf="formData.controls['lastName'].touched && !formData.controls['lastName'].valid">
+      <span *ngIf="formData.controls['lastName'].hasError('required') ">
+        First name is required
+      </span>
+      <span *ngIf="formData.controls['lastName'].hasError('minlength') ">
+        Min length is 5
+      </span>
+      <span *ngIf="formData.controls['lastName'].hasError('maxlength') ">
+        max length is 20
+      </span>
+    </div>
   </div>
   <div class="form-group">
     <label for="phone">Телефон:</label>
-    <input type="tel" class="form-control" placeholder="Введите телефон" formControlName = "phone">
+    <input type="tel" class="form-control" placeholder="Введите телефон" formControlName="phone">
   </div>
   <div class="form-group">
     <label for="date">Дата:</label>
-    <input type="date" class="form-control" placeholder="Введите дату" formControlName = "date">
+    <input type="date" class="form-control" placeholder="Введите дату" formControlName="date">
   </div>
   <button type="submit" class="btn btn-primary" [disabled]='!formData.valid'>Добавить</button>
 </form>

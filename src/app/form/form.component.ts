@@ -20,13 +20,12 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
     this.formData = new FormGroup({
-      'firstName': new FormControl('', [Validators.required,Validators.minLength(5)]),
-      'lastName': new FormControl(),
-      'email': new FormControl(),
-      'phone': new FormControl(),
-      'date': new FormControl()
-    })
-
+      firstName: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
+      lastName: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
+      email: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
+      phone: new FormControl(),
+      date: new FormControl()
+    });
 
     // this.formData.valueChanges.subscribe((value) => console.log(value));
   }
