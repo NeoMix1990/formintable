@@ -23,7 +23,7 @@
     <input type="text" class="form-control" placeholder="Введите фамилию" formControlName="lastName" required>
     <div *ngIf="formData.controls['lastName'].touched && !formData.controls['lastName'].valid">
       <span *ngIf="formData.controls['lastName'].hasError('required') ">
-        First name is required
+        Last name is required
       </span>
       <span *ngIf="formData.controls['lastName'].hasError('minlength') ">
         Min length is 5
@@ -36,15 +36,9 @@
   <div class="form-group">
     <label for="email">Email:</label>
     <input type="email" class="form-control" placeholder="Введите email" formControlName="email" required>
-    <div *ngIf="formData.controls['lastName'].touched && !formData.controls['lastName'].valid">
-      <span *ngIf="formData.controls['lastName'].hasError('required') ">
-        First name is required
-      </span>
-      <span *ngIf="formData.controls['lastName'].hasError('minlength') ">
-        Min length is 5
-      </span>
-      <span *ngIf="formData.controls['lastName'].hasError('maxlength') ">
-        max length is 20
+    <div *ngIf="formData.controls['email'].touched && !formData.controls['email'].valid">
+      <span *ngIf="formData.hasError('email', 'email') && formData.get('email').touched">
+        email must be looks like mail@gmail.com
       </span>
     </div>
   </div>

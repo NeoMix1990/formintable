@@ -22,7 +22,7 @@ export class FormComponent implements OnInit {
     this.formData = new FormGroup({
       firstName: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
       lastName: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
-      email: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl(),
       date: new FormControl()
     });
