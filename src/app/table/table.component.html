@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users; let i = index" ngClass="'active': user.winner">
+    <tr *ngFor="let user of users; let i = index" [ngClass]="{'active': user.winner}">
       <th scope="row">{{i+1}}</th>
       <td>{{user.firstName}}</td>
       <td>{{user.lastName}}</td>
