@@ -37,7 +37,8 @@
 				<input *ngIf="user.edit" [(ngModel)]="user.date" type="date">
 			</td>
       <td>
-				<button type="button" (click)="user.edit = !user.edit" class="change btn btn-danger">Изменить</button>
+				<button type="button" (click)="user.edit = !user.edit" *ngIf="!user.edit" class="change btn btn-danger">Изменить</button>
+				<button type="button" (click)="user.edit = !user.edit" *ngIf="user.edit" class="change btn btn-danger">Сохранить</button>
 			</td>
     </tr>
   </tbody>
