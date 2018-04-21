@@ -16,12 +16,29 @@
   <tbody>
     <tr *ngFor="let user of users; let i = index" [ngClass]="{'active': user.winner}">
       <th scope="row">{{i+1}}</th>
-      <td>{{user.firstName}}</td>
-      <td>{{user.lastName}}</td>
-      <td>{{user.email}}</td>
-      <td>{{user.phone}}</td>
-      <td>{{user.date}}</td>
-      <td><button type="button" class="change btn btn-danger">Изменить</button></td>
+      <td>
+				<span *ngIf="!user.edit">{{user.firstName}}</span>
+				<input *ngIf="user.edit" [(ngModel)]="user.firstName" type="text">
+			</td>
+      <td>
+				<span *ngIf="!user.edit">{{user.lastName}}</span>
+				<input *ngIf="user.edit" [(ngModel)]="user.lastName" type="text">
+			</td>
+      <td>
+				<span *ngIf="!user.edit">{{user.email}}</span>
+				<input *ngIf="user.edit" [(ngModel)]="user.email" type="text">
+			</td>
+      <td>
+				<span *ngIf="!user.edit">{{user.phone}}</span>
+				<input *ngIf="user.edit" [(ngModel)]="user.phone" type="text">
+			</td>
+      <td>
+				<span *ngIf="!user.edit">{{user.date}}</span>
+				<input *ngIf="user.edit" [(ngModel)]="user.date" type="date">
+			</td>
+      <td>
+				<button type="button" (click)="user.edit = !user.edit" class="change btn btn-danger">Изменить</button>
+			</td>
     </tr>
   </tbody>
 </table>

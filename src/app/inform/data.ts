@@ -5,7 +5,8 @@ export const users = [
         email: 'Nice@gmail.com',
         phone: '222-231-3211-22',
         date: '2018.02.15',
-        winner: false
+				winner: false,
+				edit: false
     },
     {
         firstName: 'Mary',
@@ -13,7 +14,8 @@ export const users = [
         email: 'Mary@gmail.com',
         phone: '111-333-2622-22',
         date: '2018.02.15',
-        winner: false
+				winner: false,
+				edit: false
     },
     {
         firstName: 'Andry',
@@ -21,6 +23,7 @@ export const users = [
         email: 'Andry@gmail.com',
         phone: '999-453-3321-11',
         date: '2018.02.15',
-        winner: false
+				winner: false,
+				edit: false
     }
 ]
